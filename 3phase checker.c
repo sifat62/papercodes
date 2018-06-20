@@ -1,3 +1,5 @@
+//Detailed Publication: https://doi.org/10.1109/ICIEV.2016.7759972 
+
 //=====================   Declaring Variables =================
 
 int flag1;
@@ -282,7 +284,7 @@ void delay_timer2(void)                //delay 5ms
                 PORTD.RD7=0;
                 PORTD.RD6=1; // PHASE ACB
                 Lcd_Out(1,1,txt2);
-                   Delay_ms(150);
-                   Lcd_Out(2,1,txt3);
+                Delay_ms(150);
+                Lcd_Out(2,1,txt3);
         }
         }
