@@ -40,14 +40,10 @@ char txt3[] = "Sequence";
 
 //=========================================================
 
-
-
-
-
-
 void main()
+     
 {
-CCP1CON =0x07;
+     CCP1CON =0x07;
      TRISA=0b01101111;          // initializing RA0,RA1, RA3, RA4, RA5 as input
      TRISD.RD7=0;                     // RD7 port as input
      TRISD.RD6=0;               // RD6 port as input
@@ -70,10 +66,10 @@ CCP1CON =0x07;
      TMR1L=0x78;
 
 
-   INTCON.GIE=1;                                             // Global interupt enable
-   INTCON.PEIE=1;                                            // Periferal interupt enable
-   PIR1.TMR1IF=0;                                            // Timer1 interupt flag enable
-   INTCON.TMR0IF=0;                                          // Timer0 interupt flag enable
+     INTCON.GIE=1;                                             // Global interupt enable
+     INTCON.PEIE=1;                                            // Periferal interupt enable
+     PIR1.TMR1IF=0;                                            // Timer1 interupt flag enable
+     INTCON.TMR0IF=0;                                          // Timer0 interupt flag enable
    
 
 
@@ -89,14 +85,11 @@ CCP1CON =0x07;
    
  //================logic to detect sequence==================
  
-Lcd_Init();                        // Initialize LCD
-
- Lcd_Cmd(_LCD_CLEAR);               // Clear display
-Lcd_Cmd(_LCD_CURSOR_OFF);          // Cursor off
- Delay_ms(150);
-
-
- LED();
+     Lcd_Init();                        // Initialize LCD
+     Lcd_Cmd(_LCD_CLEAR);               // Clear display
+     Lcd_Cmd(_LCD_CURSOR_OFF);          // Cursor off
+     Delay_ms(150);
+     LED();
 
    while(1);
 }
@@ -123,7 +116,7 @@ void check_phase12(void)
         load2=store();                                  // store the data into load 2
 
 
-                if(load1==1023)
+            if(load1==1023)
                         {
             flag1=1;
             stop=0;
@@ -132,7 +125,7 @@ void check_phase12(void)
                Phase1=A,Phase2=C ,sequence ACB */
             }
 
-                else if(load2==1023)
+            else if(load2==1023)
                         {
             flag1=0;
             stop=0;
@@ -164,7 +157,7 @@ void check_phase23(void)
         load4=store();                                    // store the data into load 4
 
 
-                if(load3==1023)
+             if(load3==1023)
                         {
 
             flag2=1;
@@ -173,7 +166,7 @@ void check_phase23(void)
                Phase2=A,Phase3=B ,sequence CAB*/
             }
 
-                else if(load4==1023)
+              else if(load4==1023)
                         {
             flag2=0;
             stop=0;
