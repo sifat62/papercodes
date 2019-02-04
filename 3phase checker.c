@@ -47,8 +47,8 @@ void main()
 {
      CCP1CON =0x07;
      TRISA=0b01101111;          // initializing RA0,RA1, RA3, RA4, RA5 as input
-     TRISD.RD7=0;                     // RD7 port as input
-     TRISD.RD6=0;               // RD6 port as input
+     TRISD.RD7=0;                     // RD7 port as output
+     TRISD.RD6=0;               // RD6 port as output
      TRISC = 0x00;
      //PORTD = 0x00;              // PORTD as output
      TRISB = 0x00;
